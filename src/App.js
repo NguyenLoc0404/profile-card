@@ -49,10 +49,13 @@ const Skill = ({ skill }) => {
   const style = {
     backgroundColor: skill.color,
   };
-  const emoji = skill.level === "advanced" ? "👍" : "😢";
   return (
     <div>
-      <p style={style}>{skill.name + " " + emoji}</p>
+      <p style={style}>
+        <span>skill.name</span>
+        <span>{skill.level === "advanced" && "👍"}</span>
+        <span>{skill.level !== "advanced" && "😢"}</span>
+      </p>
     </div>
   );
 };
